@@ -1,0 +1,20 @@
+{
+  "name": "learnnode",
+  "version": "1.0.0",
+  "description": "learn node init",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fidelisfelipe/learnnode.git"
+  },
+  "author": "fidelisfelipe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fidelisfelipe/learnnode/issues"
+  },
+  "homepage": "https://github.com/fidelisfelipe/learnnode#readme"
+}
