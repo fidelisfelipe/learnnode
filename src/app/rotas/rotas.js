@@ -1,22 +1,11 @@
 module.exports = (app) => {
 
-    let html = `
-    <html>
-        <head>
-            <meta charset="utf-8"><meta>
-        </head>
-        <body>
-            <h1>Hello Node with NodeMon and Express</h1>
-        </body>
-    </html>
-    `;
-
     app.get('/', function(req, resp){
-        resp.send(html);
+        resp.marko(require('../views/livros/lista/lista.marko'));
     });
 
     app.get('/hello', function(req, resp){
-        resp.send(html);
+        resp.marko(require('../views/livros/lista/lista.marko'));
     });
 
 }

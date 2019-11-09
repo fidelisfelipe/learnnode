@@ -15,6 +15,8 @@ incluido no .gitignore a regra para pasta de modulos /node_modules
 
 npm install nodemon@1.18.4 --save-dev --save-exact
 
+npm install marko@4.13.4-1 --save-exact
+
 
 
 
