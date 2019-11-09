@@ -13,6 +13,8 @@ ren gitignore.txt .gitignore
 
 incluido no .gitignore a regra para pasta de modulos /node_modules
 
+npm install nodemon@1.18.4 --save-dev --save-exact
+
 
 
 

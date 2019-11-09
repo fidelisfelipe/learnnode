@@ -6,7 +6,7 @@ module.exports = (app) => {
             <meta charset="utf-8"><meta>
         </head>
         <body>
-            <h1>Hello Node</h1>
+            <h1>Hello Node with NodeMon and Express</h1>
         </body>
     </html>
     `;

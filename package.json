@@ -19,5 +19,8 @@
   "homepage": "https://github.com/fidelisfelipe/learnnode#readme",
   "dependencies": {
     "express": "4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
   }
 }
