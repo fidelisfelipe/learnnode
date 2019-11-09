@@ -3,15 +3,15 @@
         <meta charset="utf-8"><meta>
     </head>
     <body>
-        <h1>Hello Node with NodeMon and Express</h1>
+        <h1>Hello Node with NodeMon and Express Template</h1>
         <table>
             <tr>
                 <th>ID</th>
                 <th>Título</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Fundamentos Node</td>
+            <tr for (livro in data.livros)>
+                <td>${livro.id}</td>
+                <td>${livro.titulo}</td>
             </tr>
         </table>
     </body>
