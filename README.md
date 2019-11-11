@@ -19,6 +19,8 @@ npm install marko@4.13.4-1 --save-exact
 
 npm install sqlite3@4.1.0 --save-exact
 
+npm install body-parser@1.18.3 --save-exact
+
 
 
 
