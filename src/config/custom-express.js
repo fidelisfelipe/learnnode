@@ -3,10 +3,12 @@ require('marko/express');
 
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const rotas = require('../app/rotas/rotas');
 
 const app = express();
+
+//static files
+app.use('/estatico', express.static('src/app/public'));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));

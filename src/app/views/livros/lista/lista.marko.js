@@ -11,6 +11,7 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
     component_globals_tag = marko_loadTag(require("marko/src/components/taglib/component-globals-tag")),
     marko_forEach = marko_helpers.f,
     marko_escapeXml = marko_helpers.x,
+    marko_escapeXmlAttr = marko_helpers.xa,
     init_components_tag = marko_loadTag(require("marko/src/components/taglib/init-components-tag")),
     await_reorderer_tag = marko_loadTag(require("marko/src/taglibs/async/await-reorderer-tag"));
 
@@ -21,25 +22,29 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<h1>Hello Node with NodeMon and Express Template</h1><table><tr><th>ID</th><th>Título</th></tr>");
+  out.w("<h1>Hello Node with NodeMon and Express Template</h1><table id=\"livros\"><tr><th>ID</th><th>Título</th><th>Ação</th></tr>");
 
-  var for__10 = 0;
+  var for__11 = 0;
 
   marko_forEach(data.livros, function(livro) {
-    var keyscope__11 = "[" + ((for__10++) + "]");
+    var keyscope__12 = "[" + ((for__11++) + "]");
 
-    out.w("<tr><td>" +
+    out.w("<tr id=\"livro_" +
+      marko_escapeXmlAttr(livro.id) +
+      "\"><td>" +
       marko_escapeXml(livro.id) +
       "</td><td>" +
       marko_escapeXml(livro.titulo) +
-      "</td></tr>");
+      "</td><td>Editar</td><td><a href=\"#\" data-ref=\"" +
+      marko_escapeXmlAttr(livro.id) +
+      "\" data-type=\"remocao\">Remover</a></td></tr>");
   });
 
-  out.w("</table>");
+  out.w("</table><script src=\"/estatico/js/remove-livros.js\">\r\n        </script>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "15");
+  await_reorderer_tag({}, out, __component, "20");
 
   out.w("</body></html>");
 }
