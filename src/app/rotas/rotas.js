@@ -21,7 +21,7 @@ module.exports = (app) => {
     });
 
     app.post('/livros/add', function(req, resp){   
-        console.log(req.boby);
+        console.log(req.body);
     });
 
 }
