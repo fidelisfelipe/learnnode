@@ -3,7 +3,15 @@
     <h1>Cadastro</h1>
     <form action="/livros/add" method="post" >
 
-        <input type="text" name="titulo" id="titulo" value="teste"/>
+        <div>
+        <input type="hidden" name="id" id="id" />
+        </div>
+        <div>
+        <input type="text" name="titulo" id="titulo" placeholder="Informe o titulo"/>
+        </div>
+        <div>
+        <input type="text" name="valor" id="valor" placeholder="00.00"/>
+        </div>
 
         <input type="submit"  value="Salvar" />
     </form>
