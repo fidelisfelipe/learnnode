@@ -13,7 +13,7 @@
             <tr id="livro_${livro.id}" for (livro in data.livros)>
                 <td>${livro.id}</td>
                 <td>${livro.titulo}</td>
-                <td>Editar</td>
+                <td ><a href="/livros/${livro.id}">Editar</a></td>
                 <td><a href="#" data-ref="${livro.id}" data-type="remocao">Remover</a></td>
             </tr>
         </table>

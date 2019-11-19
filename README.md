@@ -21,6 +21,8 @@ npm install sqlite3@4.1.0 --save-exact
 
 npm install body-parser@1.18.3 --save-exact
 
+npm install method-override@3.0.0 --save-exact
+
 
 
 

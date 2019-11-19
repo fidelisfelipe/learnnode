@@ -38,9 +38,13 @@ class LivroDao {
     }
 
     atualiza(livro){
+        console.log('dados para atualizacao:');
+        console.log('id: '+livro.id);
+        console.log('titulo: '+livro.titulo);
+        console.log('valor: '+livro.valor);
         return new Promise((resolve, reject) => {
             this._db.run(`
-            update from livros set titulo = ? , set preco = ? where id = ?
+            update livros set titulo = ? , preco = ? where id = ?
             `,
             [
                 livro.titulo,
@@ -78,9 +82,10 @@ class LivroDao {
     }
 
     buscaPorId(id){
+        console.log('buscando por livro id: '+id);
         return new Promise((resolve, reject) => {
             this._db.get(`
-            select from livros where id = ?
+            select * from livros where id = ?
             `,
             [
                 id
@@ -90,7 +95,7 @@ class LivroDao {
                     console.log(erro);
                     return reject('Não foi possível encontrar o livro!');
                 }
-
+                console.log('livro encontrado: '+livro.id+' - '+livro.titulo+' - '+livro.preco);
                 resolve(livro);
             });
          });

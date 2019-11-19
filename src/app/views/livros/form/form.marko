@@ -3,14 +3,15 @@
     <h1>Cadastro</h1>
     <form action="/livros/add" method="post" >
 
-        <div>
-        <input type="hidden" name="id" id="id" />
+        <div if(data.livro.id)>
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="id" value="${data.livro.id}">
         </div>
         <div>
-        <input type="text" name="titulo" id="titulo" placeholder="Informe o titulo"/>
+        <input type="text" name="titulo" id="titulo" placeholder="Informe o titulo" value="${data.livro.titulo}"/>
         </div>
         <div>
-        <input type="text" name="valor" id="valor" placeholder="00.00"/>
+        <input type="text" name="valor" id="valor" placeholder="00.00" value="${data.livro.preco}"/>
         </div>
 
         <input type="submit"  value="Salvar" />

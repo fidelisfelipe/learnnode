@@ -35,7 +35,9 @@ function render(input, out, __component, component, state) {
       marko_escapeXml(livro.id) +
       "</td><td>" +
       marko_escapeXml(livro.titulo) +
-      "</td><td>Editar</td><td><a href=\"#\" data-ref=\"" +
+      "</td><td><a href=\"/livros/" +
+      marko_escapeXmlAttr(livro.id) +
+      "\">Editar</a></td><td><a href=\"#\" data-ref=\"" +
       marko_escapeXmlAttr(livro.id) +
       "\" data-type=\"remocao\">Remover</a></td></tr>");
   });
@@ -44,7 +46,7 @@ function render(input, out, __component, component, state) {
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "20");
+  await_reorderer_tag({}, out, __component, "21");
 
   out.w("</body></html>");
 }
