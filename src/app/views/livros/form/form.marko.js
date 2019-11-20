@@ -16,11 +16,11 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
 function render(input, out, __component, component, state) {
   var data = input;
 
-  out.w("<html><body>");
+  out.w("<html><head><meta charset=\"utf-8\"><link rel=\"stylesheet\" href=\"/estatico/css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"/estatico/css/fontawesome.min.css\"><link rel=\"stylesheet\" href=\"/estatico/css/casadocodigo.css\"></head><body>");
 
   component_globals_tag({}, out);
 
-  out.w("<h1>Cadastro</h1><form action=\"/livros/add\" method=\"post\">");
+  out.w("<header class=\"cabecalhoPrincipal\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><h1 class=\"logo\"><img src=\"/estatico/imagens/logo-casadocodigo.svg\" alt=\"Casa do Código\"></h1></div><div class=\"cabecalhoPrincipal-navegacao col-8\"><a href=\"#\" class=\"login\"><i class=\"fas fa-sign-in-alt\"></i>Login</a></div></div></div></header><main class=\"conteudoPrincipal\"><div class=\"container\"><h1>Cadastro</h1><form action=\"/livros/add\" method=\"post\">");
 
   if (data.livro.id) {
     out.w("<div><input type=\"hidden\" name=\"_method\" value=\"PUT\"><input type=\"hidden\" name=\"id\" value=\"" +
@@ -28,15 +28,15 @@ function render(input, out, __component, component, state) {
       "\"></div>");
   }
 
-  out.w("<div><input type=\"text\" name=\"titulo\" id=\"titulo\" placeholder=\"Informe o titulo\" value=\"" +
+  out.w("<div class=\"form-group\"><input type=\"text\" name=\"titulo\" id=\"titulo\" placeholder=\"Informe o titulo\" value=\"" +
     marko_escapeXmlAttr(data.livro.titulo) +
-    "\"></div><div><input type=\"text\" name=\"valor\" id=\"valor\" placeholder=\"00.00\" value=\"" +
+    "\" class=\"form-control\"></div><div class=\"form-group\"><input type=\"text\" name=\"valor\" id=\"valor\" placeholder=\"00.00\" value=\"" +
     marko_escapeXmlAttr(data.livro.preco) +
-    "\"></div><input type=\"submit\" value=\"Salvar\"></form>");
+    "\" class=\"form-control\"></div><input type=\"submit\" value=\"Salvar\" class=\"btn btn-primary\"></form></div></main><footer class=\"rodape\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><img src=\"/estatico/imagens/logo-rodape.svg\" class=\"logo-rodape\"></div><div class=\"col-8\"><ul class=\"redesSociais\"><li><a href=\"http://www.facebook.com/casadocodigo\" class=\"compartilhar-facebook\" target=\"_blank\">/CasaDoCodigo</a></li><li><a href=\"http://www.twitter.com/casadocodigo\" class=\"compartilhar-twitter\" target=\"_blank\">@casadocodigo</a></li></ul></div></div></div></footer>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "12");
+  await_reorderer_tag({}, out, __component, "39");
 
   out.w("</body></html>");
 }
