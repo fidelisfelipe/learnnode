@@ -4,8 +4,7 @@ const db = require('../../config/database')
 module.exports = (app) => {
 
     app.get('/', function(req, resp){
-        
-        resp.marko(require('../views/livros/lista/lista.marko'));
+        resp.marko(require('../views/base/home/home.marko'));
     });
 
     app.get('/livros/add', function(req, resp){   
@@ -38,11 +37,18 @@ module.exports = (app) => {
 
     app.delete('/livros/:id', (req, resp) => {
         const id = req.params.id;
-
+        console.log('livro '+id+' enviado para remoção.');
         const livroDao = new LivroDao(db);
-        livroDao.remove(id)
-            .then(() => resp.status(200).end())
+
+        livroDao.buscaPorId(id)
+            .then(
+                livroDao.remove(id)
+                .then(() => resp.status(200).end())
+                .catch(erro => console.log(erro))
+            )
             .catch(erro => console.log(erro));
+
+       
     });
 
     app.get('/livros/:id', (req, resp) => {

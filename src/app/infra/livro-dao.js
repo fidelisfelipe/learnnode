@@ -62,13 +62,14 @@ class LivroDao {
         });
     }
 
-   remove(livro){
+   remove(id){
+       console.log('removendo livro: '+id);
         return new Promise((resolve, reject) => {
             this._db.run(`
             delete from livros where id = ?
             `,
             [
-                livro.id
+                id
             ],
             function (erro) {
                 if (erro) {
